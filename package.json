@@ -1,0 +1,10 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/adico1/react-deep-dive.git",
+  "author": "adico1 <adico1@gamil.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": ["Samples/Security/JWTAuth", "Samples/Security/XSS"]
+}

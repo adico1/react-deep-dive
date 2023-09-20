@@ -1,11 +1,12 @@
 {
-  "name": "react",
+  "name": "react-jwt-authentication",
   "version": "1.0.0",
-  "description": "React example starter project",
+  "description": "React JWT Authentication",
   "license": "MIT",
   "keywords": [
     "react",
-    "starter"
+    "jwt",
+    "authentication"
   ],
   "main": "src/index.js",
   "dependencies": {
