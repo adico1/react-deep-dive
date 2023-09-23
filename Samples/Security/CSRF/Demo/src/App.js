@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Profile from './Profile';
+import { Link, Route, BrowserRouter as Router } from 'react-router-dom';
 import Malicious from './Malicious';
+import Profile from './Profile';
 
 function App() {
   const [balance, setBalance] = useState(1000);
@@ -19,8 +19,10 @@ function App() {
             </li>
           </ul>
         </nav>
-        <Route path="/profile" render={() => <Profile balance={balance} setBalance={setBalance} />} />
-        <Route path="/malicious" component={Malicious} />
+        <Routes>
+          <Route path="/profile" element={<Profile balance={balance} setBalance={setBalance} />} />
+          <Route path="/malicious" element={Malicious} />
+        </Routes>
       </div>
     </Router>
   );
