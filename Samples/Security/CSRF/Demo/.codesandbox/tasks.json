@@ -35,7 +35,10 @@
     "server": {
       "name": "server",
       "command": "yarn server",
-      "runAtStart": false
+      "runAtStart": true,
+      "preview": {
+        "port": 8080
+      }
     }
   }
 }

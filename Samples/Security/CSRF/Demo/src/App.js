@@ -21,7 +21,7 @@ function App() {
         </nav>
         <Routes>
           <Route path="/profile" element={<Profile balance={balance} setBalance={setBalance} />} />
-          <Route path="/malicious" element={Malicious} />
+          <Route path="/malicious" element={<Malicious />} />
         </Routes>
       </div>
     </Router>
