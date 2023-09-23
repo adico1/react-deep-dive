@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, Route, BrowserRouter as Router } from 'react-router-dom';
+import { Link, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Malicious from './Malicious';
 import Profile from './Profile';
 
