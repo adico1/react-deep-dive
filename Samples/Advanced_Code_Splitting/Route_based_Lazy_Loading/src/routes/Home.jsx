@@ -1,18 +1,23 @@
-// routes/Home.js
-import React from 'react';
+// Home.js
+import React, { useEffect, useState } from 'react';
 
-const Home = () => (
-  <div>
-    <h1>Home Page</h1>
-  </div>
-);
+const Home = () => {
+  const [loading, setLoading] = useState(true);
 
-// Simulate a network delay
-const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000);  // 2 seconds delay
+    return () => clearTimeout(timer);  // Cleanup the timer
+  }, []);
 
-const exportWithDelay = async () => {
-  await delay(2000);  // 2 seconds delay
-  return Home;
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <div>
+      <h1>Home Page</h1>
+    </div>
+  );
 };
 
-export default exportWithDelay();
+export default Home;
