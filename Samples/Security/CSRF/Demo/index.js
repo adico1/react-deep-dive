@@ -11,7 +11,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-const authenticate = (next) => {
+const authenticate = (req, res, next) => {
   // Simplified authenticate for demonstration - user ia already authenticated
   next();
 };
