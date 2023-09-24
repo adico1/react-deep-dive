@@ -37,7 +37,15 @@
       "command": "yarn server",
       "runAtStart": true,
       "preview": {
-        "port": 8080
+        "port": 3001
+      }
+    },
+    "malicious-server": {
+      "name": "malicious-server",
+      "command": "yarn malicious-server",
+      "runAtStart": true,
+      "preview": {
+        "port": 3002
       }
     }
   }
