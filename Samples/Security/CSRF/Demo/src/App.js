@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import Malicious from './Malicious';
 import Profile from './Profile';
 
 function App() {
   const [balance, setBalance] = useState(1000);
+
+  const serverUrl = document.location.host.replace("3000", "3002");
+  console.log("serverUrl:", serverUrl);
 
   return (
     <Router>
@@ -16,14 +18,14 @@ function App() {
             </li>
             <div>
               <div className={'notification show'}>
-                <Link to="http://localhost:3002/malicious.html">Bank Account</Link>
+                <span>pushed by a malicious user thru email, SMS, notifications, XSS and alike.</span>
+                <Link to="{`http://${serverUrl}/malicious.html`}">Win A Prize</Link>
               </div>
             </div>
           </ul>
         </nav>
         <Routes>
           <Route path="/profile" element={<Profile balance={balance} setBalance={setBalance} />} />
-          <Route path="/malicious" element={<Malicious />} />
         </Routes>
       </div>
     </Router>
