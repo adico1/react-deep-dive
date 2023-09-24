@@ -14,9 +14,12 @@ function App() {
             <li>
               <Link to="/profile">Bank Account</Link>
             </li>
-            <li>
-              <Link to="/malicious">Win a Prize!</Link>
-            </li>
+            <div>
+              <button onClick={handleWinPrize}>Win a Prize</button>
+              <div className={`notification ${showNotification ? 'show' : ''}`}>
+                Congratulations! You've won a prize!
+              </div>
+            </div>
           </ul>
         </nav>
         <Routes>
