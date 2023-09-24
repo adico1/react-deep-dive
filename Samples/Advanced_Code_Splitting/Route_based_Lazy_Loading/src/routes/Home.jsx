@@ -7,4 +7,12 @@ const Home = () => (
   </div>
 );
 
-export default Home;
+// Simulate a network delay
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+const exportWithDelay = async () => {
+  await delay(2000);  // 2 seconds delay
+  return Home;
+};
+
+export default exportWithDelay();
