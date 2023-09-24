@@ -36,7 +36,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "server": "node index.js"
+    "server": "node index.js",
+    "malicious-server": "cd malicious && http-server -p 3002"
   },
   "browserslist": [
     ">0.2%",
